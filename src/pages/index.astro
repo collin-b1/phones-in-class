@@ -1,41 +1,119 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import { Image } from 'astro:assets';
-import myImage from '../assets/pexels-rdne-6936137.jpg';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import myImage from "../assets/phones-in-lecture.jpg";
 ---
+
 <style>
   li:not(:first-child) {
     margin-top: 1.5rem;
   }
 </style>
-<Layout title='Home'>
+<Layout title="Home">
   <header>
     <h1>Cell Phones in Class: Tool or Detriment?</h1>
   </header>
   <main>
-    <p>In today's classrooms, cell phones are ubiquitous as a distraction and escape for students. Studies show that phone use in lectures has skyrocketed—from <b>57%</b> in 2011 to nearly <b>80%</b> in 2017<sup><a href="#1">1</a></sup>. Are these devices aiding our education, or are they harming our focus, grades, and health? Let's dive into the real impact of cell phones on college students.</p>
+    <p>
+      In today's classrooms, cell phones are ubiquitous as a distraction and
+      escape for students. Studies show that phone use in lectures has
+      skyrocketed—from <b>57%</b> in 2011 to nearly <b>80%</b> in 2017<sup
+        ><a href="#1">1</a></sup
+      >. Are these devices aiding our education, or are they harming our focus
+      and grades?
+    </p>
     <figure>
-      <Image src={myImage} alt="Students using phones in class" loading="eager"/>
-      <figcaption>Photo by RDNE Stock project: https://www.pexels.com/photo/students-sitting-inside-the-classroom-while-using-their-smartphone-6936137/</figcaption>
+      <Image
+        src={myImage}
+        alt="Students using phones in class"
+        loading="eager"
+      />
+      <figcaption>
+        Source:
+        https://educational-innovation.sydney.edu.au/teaching@sydney/instagram-disrupt/shutterstock_1077840614/
+      </figcaption>
     </figure>
     <h2>An Addictive Distraction</h2>
-    <p>Most people can recognize that they frequently get distracted by their phone, but just how often does this actually happen?</p>
-    <p>Studies have found that college students unlock their phones 50-60 times a day, with about 4 hours of daily screen time<sup><a href="#2">2</a></sup>. During class, students tend to underestimate the amount of times they check their phone, with one study finding an average of nearly 13 uses per class<sup><a href="#3">3</a></sup>.</p>
-    <p>Ask yourself this: how often do you go to check a notification, only to end up having a full text conversation with someone, or start scrolling on Instagram? Phones have become a socially acceptable way for people to get quick dopamine rushes from the distractions that they provide.</p>
+    <p>
+      Most people can recognize that they frequently get distracted by their
+      phone, but just how often does this actually happen?
+    </p>
+    <p>
+      Studies have found that college students unlock their phones 50-60 times a
+      day, with about 4 hours of daily screen time<sup><a href="#2">2</a></sup>.
+      During class, students tend to underestimate the amount of times they
+      check their phone, with one study finding an average of nearly 13 uses per
+      class<sup><a href="#3">3</a></sup>.
+    </p>
+    <p>
+      Ask yourself this: how often do you go to check a notification, only to
+      end up having a full text conversation with someone, or start scrolling on
+      Instagram?
+    </p>
+    <p>
+      Phones have become a socially acceptable way for people to get quick
+      dopamine rushes from the distractions that they provide. For many, it is a
+      true addiction, and separation from phones causes anxiety and stress.
+      After only 10 minutes away from their phones, students in one study show
+      increased anxiety<sup><a href="#2">2</a></sup>.
+    </p>
     <h2>Worsened Academic Performance</h2>
-    <p>Cell phones aren't just distracting students; they're also harming academic performance. Studies that account for factors like class, major, and high school GPA have shown that high phone usage correlates with lower grades. For example, students using their phones for 600 minutes a day had an average GPA of 2.84, while those using them for 94 minutes had a GPA of 3.15<sup><a href="#4">4</a></sup>. A study on Korean students confirmed that higher smartphone use is linked to lower grades<sup><a href="#3">3</a></sup>. Additionally, research in the UK found that banning phones improved test scores by 6.41%<sup><a href="#5">5</a></sup>. This evidence suggests that phone usage negatively impacts academic performance.</p>
-    <h2>How do I Break the Habit?</h2>
-    <p>If you are a student who struggles with phone addiction in class, visit the <a href="/resources">Resources</a> page.</p>
+    <p>
+      Cell phones aren't just distracting students; they're also harming
+      academic performance. Studies that account for factors like class, major,
+      and high school GPA have shown that high phone usage correlates with lower
+      grades. For example, students using their phones for 10 hours a day had an
+      average GPA of 2.84, while those using them for 94 minutes had a GPA of
+      3.15<sup><a href="#4">4</a></sup>.
+    </p>
+    <p>
+      A study on Korean students confirmed that higher smartphone use is linked
+      to lower grades<sup><a href="#3">3</a></sup>. Additionally, research in
+      the UK found that banning phones improved test scores by 6.41%<sup
+        ><a href="#5">5</a></sup
+      >.
+    </p><p>
+      This evidence suggests that phone usage in class negatively impacts
+      academic performance.
+    </p>
+
+    <h2>How Can I Break the Habit?</h2>
+    <p>
+      If you are a student who struggles with phone addiction in class, visit
+      the <a href="/phones-in-class/resources">Resources</a> page.
+    </p>
   </main>
-  
+  <br />
   <footer>
     <h2>References</h2>
     <ol>
-      <li id="1">Felisoni, D. D., & Godoi, A. S. (2018). Cell phone usage and academic performance: An experiment. Computers & Education, 117(117), 175–187. https://doi.org/10.1016/j.compedu.2017.10.006</li>
-      <li id="2">Dontre, A. J. (2020). The influence of technology on academic distraction: A review. Human Behavior and Emerging Technologies, 3(3), 379–390. https://doi.org/10.1002/hbe2.229</li>
-      <li id="3">Kim, Inyeop, et al (2019). “Understanding smartphone usage in college classrooms: A long-term measurement study.” Computers and Education, vol. 141, 2019, p. 103611, https://doi.org/10.1016/j.compedu.2019.103611.</li>
-      <li id="4">Lepp, Andrew, et al (2015). “The Relationship Between Cell Phone Use and Academic Performance in a Sample of U.S. College Students.” SAGE Open, vol. 5, no. 1, 2015, pp. 215824401557316–9, https://doi.org/10.1177/2158244015573169</li>
-      <li id="5">Beland, L.-P., & Murphy, R. (2016). Ill Communication: Technology, distraction & student performance. Labour Economics, 41(1), 61–76. https://doi.org/10.1016/j.labeco.2016.04.004</li>
+      <li id="1">
+        Felisoni, D. D., & Godoi, A. S. (2018). Cell phone usage and academic
+        performance: An experiment. Computers & Education, 117(117), 175–187.
+        https://doi.org/10.1016/j.compedu.2017.10.006
+      </li>
+      <li id="2">
+        Dontre, A. J. (2020). The influence of technology on academic
+        distraction: A review. Human Behavior and Emerging Technologies, 3(3),
+        379–390. https://doi.org/10.1002/hbe2.229
+      </li>
+      <li id="3">
+        Kim, Inyeop, et al (2019). “Understanding smartphone usage in college
+        classrooms: A long-term measurement study.” Computers and Education,
+        vol. 141, 2019, p. 103611,
+        https://doi.org/10.1016/j.compedu.2019.103611.
+      </li>
+      <li id="4">
+        Lepp, Andrew, et al (2015). “The Relationship Between Cell Phone Use and
+        Academic Performance in a Sample of U.S. College Students.” SAGE Open,
+        vol. 5, no. 1, 2015, pp. 215824401557316–9,
+        https://doi.org/10.1177/2158244015573169
+      </li>
+      <li id="5">
+        Beland, L.-P., & Murphy, R. (2016). Ill Communication: Technology,
+        distraction & student performance. Labour Economics, 41(1), 61–76.
+        https://doi.org/10.1016/j.labeco.2016.04.004
+      </li>
     </ol>
   </footer>
 </Layout>

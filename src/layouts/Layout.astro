@@ -1,8 +1,9 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Navigation from "../components/Navigation.astro";
+import "@fontsource/roboto";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -10,63 +11,74 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Cell Phones in Class: {title}</title>
-	</head>
-	<body>
-		<Navigation />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Cell Phones in Class: {title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Freeman&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Navigation />
+    <slot />
+  </body>
 </html>
 <style is:global>
-	@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-	html {
-		background-color: #e9e7d9;
-		scroll-behavior: smooth;
-	}
-	body {
-		padding:1rem;
-		max-width: 48rem;
-		font-size: 1.125rem;
-		margin: 0 auto;
-		font-family: "Noto Sans Display", sans-serif;
-		font-optical-sizing: auto;
-		font-weight: <weight>;
-		font-style: normal;
-		font-variation-settings: "wdth" 100;
-	}
-	main > *, footer > * {
-		margin-top:1.5rem;
-	}
-	h2 + * {
-		margin-top: 0.5rem;
-	}
-	h3 {
-		font-size: 1.125rem;
-		font-weight:400;
-	}
-	h2 {
-		margin-top: 2rem;
-	}
-	sup { line-height: 0; }
-	img {
-		max-width:100%;
-		height: auto;
-	}
-	ol, ul {list-style-position: inside;}
-	li:target {
-  	background-color: yellow;
-	}
-	figcaption {
-		font-size: x-small;
-	}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    background-color: #e9e7d9;
+    scroll-behavior: smooth;
+  }
+  body {
+    padding: 1rem;
+    max-width: 48rem;
+    font-size: 1.125rem;
+    margin: 0 auto;
+    font-family: "Noto Sans Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+  main > *,
+  footer > * {
+    margin-top: 1.5rem;
+  }
+  h2 + * {
+    margin-top: 0.5rem;
+  }
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 400;
+  }
+  h2 {
+    margin-top: 2rem;
+  }
+  sup {
+    line-height: 0;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  ol,
+  ul {
+    list-style-position: inside;
+  }
+  li:target {
+    background-color: yellow;
+  }
+  figcaption {
+    font-size: x-small;
+  }
 </style>

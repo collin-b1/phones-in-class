@@ -1,13 +1,14 @@
 ---
-import Layout from '../../layouts/Layout.astro'
+import Layout from "../../layouts/Layout.astro";
 ---
+
 <style>
   form {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
   }
   form > div {
-    display:flex;
+    display: flex;
     margin-bottom: 1rem;
   }
   label + input {
@@ -19,47 +20,75 @@ import Layout from '../../layouts/Layout.astro'
   button {
     padding: 0.5rem;
   }
-  #semester-hours, #total-lectures {
+  #semester-hours,
+  #total-lectures {
     font-weight: bold;
   }
 </style>
-<Layout title='Calculator'>
+<Layout title="Calculator">
   <h1>Phone Usage Calculator</h1>
   <main>
-    <p>Want to see how much you use your phone in class overall? Fill in the input below!</p>
+    <p>
+      Want to see how much you use your phone in class overall? Fill in the
+      input below!
+    </p>
     <h2>Data</h2>
     <form action="/calculator" method="get">
       <div>
-        <label for="screen-time">What is your average screentime per day (in hours)?:</label>
-        <input type="number" name="screen-time" min="0" max="24" required>
+        <label for="screen-time"
+          >What is your average screentime per day (in hours)?:</label
+        >
+        <input type="number" name="screen-time" min="0" max="24" required />
       </div>
       <div>
         <label for="semester-weeks">How many weeks are in a semester?:</label>
-        <input type="number" name="semester-weeks" min="0" max="54" value={15} required>
+        <input
+          type="number"
+          name="semester-weeks"
+          min="0"
+          max="54"
+          value={15}
+          required
+        />
       </div>
       <div>
-        <label for="lecture-time">How long typically are your lectures (in minutes)?:</label>
-        <input type="number" name="lecture-time" min="0" max="600" required>
+        <label for="lecture-time"
+          >How long typically are your lectures (in minutes)?:</label
+        >
+        <input type="number" name="lecture-time" min="0" max="600" required />
       </div>
       <div>
         <button type="submit">Calculate</button>
       </div>
     </form>
     <h2>Results</h2>
-    <p>Over the course of the semester, you spend <span id="semester-hours">0</span> hours on your phone!</p>
-    <p>That's equivalent to <span id="total-lectures">0</span> entire lectures of phone usage per semester!</p>
+    <p>
+      Over the course of the semester, you spend <span id="semester-hours"
+        >0</span
+      > hours on your phone!
+    </p>
+    <p>
+      That's equivalent to <span id="total-lectures">0</span> entire lectures of
+      phone usage per semester!
+    </p>
   </main>
 </Layout>
 <script>
-  document.querySelector('form')!.addEventListener('submit', (event) => {
+  document.querySelector("form")!.addEventListener("submit", (event) => {
     event.preventDefault();
     calculate();
   });
 
   function calculate() {
-    const screenTime: HTMLInputElement = document.querySelector('input[name="screen-time"]')!;
-    const semesterWeeks: HTMLInputElement = document.querySelector('input[name="semester-weeks"]')!;
-    const lectureTime: HTMLInputElement = document.querySelector('input[name="lecture-time"]')!;
+    const screenTime: HTMLInputElement = document.querySelector(
+      'input[name="screen-time"]',
+    )!;
+    const semesterWeeks: HTMLInputElement = document.querySelector(
+      'input[name="semester-weeks"]',
+    )!;
+    const lectureTime: HTMLInputElement = document.querySelector(
+      'input[name="lecture-time"]',
+    )!;
 
     const screenTimeValue = parseFloat(screenTime.value);
     const semesterWeeksValue = parseInt(semesterWeeks.value);
@@ -67,11 +96,12 @@ import Layout from '../../layouts/Layout.astro'
 
     if (screenTimeValue && lectureTimeValue && lectureTimeValue) {
       const totalHours = screenTimeValue * semesterWeeksValue * 7;
-      const totalHoursOutput = document.getElementById('semester-hours')!;
+      const totalHoursOutput = document.getElementById("semester-hours")!;
       totalHoursOutput.textContent = `${totalHours}`;
 
-      const totalLectures = screenTimeValue * 7 * semesterWeeksValue / (lectureTimeValue / 60);
-      const totalLecturesOutput = document.getElementById('total-lectures')!;
+      const totalLectures =
+        (screenTimeValue * 7 * semesterWeeksValue) / (lectureTimeValue / 60);
+      const totalLecturesOutput = document.getElementById("total-lectures")!;
       totalLecturesOutput.textContent = totalLectures.toFixed(2);
     }
   }
